@@ -26,16 +26,16 @@ In this directory, you'll find host-specific variables encrypted using Ansible V
 
 # Getting Started
 To use these playbooks and leverage the automation capabilities they provide, follow these steps:
-
--  Clone the repository to your local machine or Ansible control node.
-
--  Review the documentation and README files within each directory to understand the purpose and usage of the playbooks and related files.
-
--  Customize the variables, inventories, and configuration files based on your specific environment and requirements.
-
--  Run the playbooks using the ansible-playbook command, targeting the appropriate hosts and playbooks.
-
--  Monitor the output, review logs, and validate the results to ensure that the desired configurations and tasks are successfully applied.
+    
+    -  Clone the repository to your local machine or Ansible control node.
+    
+    -  Review the documentation and README files within each directory to understand the purpose and usage of the playbooks and related files.
+    
+    -  Customize the variables, inventories, and configuration files based on your specific environment and requirements.
+    
+    -  Run the playbooks using the ansible-playbook command, targeting the appropriate hosts and playbooks.
+    
+    -  Monitor the output, review logs, and validate the results to ensure that the desired configurations and tasks are successfully applied.
 
 ### Please note that this repository serves as a starting point, and you can adapt and extend the playbooks according to your infrastructure's needs. 
 Feel free to contribute, provide feedback, and share your own playbooks and improvements with the community.
