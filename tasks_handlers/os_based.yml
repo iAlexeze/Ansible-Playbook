@@ -1,0 +1,20 @@
+---
+- name: Conditional Apache Installation
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install Apache
+      package:
+        name: "{{ item }}"
+        state: present
+      # loop: "{{os_pkg}}"
+      loop:
+        - apache2
+        - httpd
+      when: ansible_pkg_mgr == 'apt' and item == 'apache2'
+            or ansible_pkg_mgr == 'yum' and item == 'httpd'
+
+    - name: Start Apache service
+      service:
+        name: "{{ 'apache2' if ansible_pkg_mgr == 'apt' else 'httpd' }}"
+        state: started

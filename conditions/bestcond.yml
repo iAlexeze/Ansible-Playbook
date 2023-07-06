@@ -1,0 +1,25 @@
+---
+- name: OS-based Conditional Installation
+  hosts: all
+  become: yes
+  gather_facts: yes
+  tasks:
+    - name: Install Maven on Ubuntu
+      apt:
+        name: "{{item}}"
+        state: present
+      when: ansible_distribution == "Ubuntu"
+      loop:
+      - maven
+      - zip
+      - wget
+
+    - name: Install Maven on Redhat
+      yum:
+        name: "{{item}}"
+        state: present
+      when: ansible_distribution == "RedHat"
+      loop:
+      - maven
+      - zip
+      - wget

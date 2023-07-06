@@ -1,0 +1,54 @@
+# Tasks are procedurial, and executed step by step. This means that task 2 only haooens after he success of task 1.
+# It also means that task2 (example: start the service) will ALWAYS happen even though the tasks edited is task3 (Copy the UI file)  
+# even when it is not necessary
+
+# To make sure that only the needed task is executed, we use "HANDLERS"
+# Notify and Handler's name MUST be the same
+
+---
+- name: Web setup
+  hosts: web
+  become: yes
+  gather_facts: yes
+  tags:
+    - web
+  tasks:
+    - name: Install Apache
+      apt:
+        name: apache2
+        state: present
+
+    - name: Start the service
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+
+    - name: Copy the UI file
+      copy:
+        src: /mnt/c/Devops/index.html
+        dest: /var/www/html
+      notify:
+        - restart apache2
+  
+  handlers:
+    - name: restart apache2
+      service:
+        name: apache2
+        state: restarted
+
+- name: DB Setup
+  hosts: db
+  gather_facts: on
+  become: on
+  tags:
+    - db
+  tasks:
+    - name: Setup the DB_Server
+      yum:
+        name: zip
+        state: present
+    - debug:
+        var: file_used
+    - debug:
+        msg: "{{os_used}}"

@@ -1,0 +1,11 @@
+---
+- name: Test my encryption doings
+  hosts: web
+  tasks:
+    - name: Display user variable
+      debug:
+        var: user
+
+    - name: Display password message
+      debug:
+        msg: "Password is {{ password }}"

@@ -1,0 +1,31 @@
+---
+- name: Hello Play
+  hosts: web
+  tasks:
+    - name: Execute command and capture output
+      set_fact: 
+        my_variable: "Hello, Ansible!"
+
+    - name: Print registered variable
+      ansible.builtin.debug:
+        var: my_variable
+
+    - name: Display hostname
+      debug:
+        var: ansible_hostname
+    - name: Perform echo command
+      ansible.builtin.shell: "God is powerful"
+
+- name: IP Play
+  hosts: web
+  tasks:
+    - name: IP address of db servers
+      debug:
+        var: ansible_host
+    - name: Perform echo command
+      ansible.builtin.shell: echo "Hello, world!"
+      register: echo_output
+
+    - name: Print echo output
+      debug:
+        msg: "Echo output: {{ echo_output.stdout }}"

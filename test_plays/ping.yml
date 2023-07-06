@@ -1,0 +1,10 @@
+- name: Ping all hosts
+  hosts: all
+  tasks:
+    - name: Perform ping test
+      ansible.builtin.ping:
+      register: ping_result
+
+    - name: Print ping results
+      debug:
+        msg: "Ping to {{ inventory_hostname }} was {{ 'successful' if ping_result.ping else 'unsuccessful' }}"

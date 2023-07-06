@@ -1,0 +1,26 @@
+- name: Installing Webserver
+  hosts: web
+  become: yes
+  tasks:
+    - name: Install APACHE on RedHat
+      apt:
+        name: apache2
+        state: present
+    - debug:
+        var: username
+    - debug:
+        var: password
+
+- name: Installing DBserver
+  hosts: db
+  become: yes
+  tasks:
+    - name: Install MariaDB on RedHat
+      yum:
+        name: mariadb-server
+        state: present
+    - debug:
+        msg: "{{ username }}"
+    - debug:
+        var: password
+

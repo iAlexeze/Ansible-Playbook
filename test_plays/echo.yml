@@ -1,0 +1,11 @@
+- name: World Play
+  hosts: all
+  tasks:  
+      - name: Perform echo command and capture output
+        ansible.builtin.shell: echo "Hello, world!"
+        register: echo_output
+
+      - name: Print echo output
+        debug:
+          msg: "{{ echo_output.stdout }}"
+        check_mode: false

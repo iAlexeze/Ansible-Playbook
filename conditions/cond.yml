@@ -1,0 +1,16 @@
+---
+- name: OS-based Conditional Installation
+  hosts: all
+  become: yes
+  gather_facts: false
+  tasks:
+    - name: Install Maven on Ubuntu
+      apt:
+        name: maven
+        state: present
+
+    - name: Install Maven on Redhat
+      yum:
+        name: maven
+        state: present
+      ignore_errors: true

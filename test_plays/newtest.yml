@@ -1,0 +1,30 @@
+- name: HTTPD installation
+  hosts: all
+  become: true
+  tasks:
+    - name: Install HTTPD
+      package:
+        name: httpd
+        state: present
+    - name: Start HTTPD
+      service:
+        name: httpd
+        state: started
+    - name: Copy files
+      copy:
+        src: ./index.html
+        dest: /var/www/html
+      diff: false
+
+    - name: Install APACHE
+      package:
+        name: apache
+        state: present
+    - name: Start APACHE
+      service:
+        name: apache
+        state: started
+    - name: Copy files
+      copy:
+        src: ./index.html
+        dest: /var/www/html
