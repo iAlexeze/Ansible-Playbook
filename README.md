@@ -50,5 +50,11 @@ We would like to acknowledge the Ansible community and contributors for their va
 
 If you have any questions, suggestions, or issues, please don't hesitate to reach out. We appreciate your interest and hope this repository proves useful in your automation journey.
 
-Thank you,
-### [@ialexeze](http://github.com/ialexeze)
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Let's Connect,
+- <a href="https://github.com/ialexeze" target="_blank">GitHub</a>
+- <a href="https://linkedin.com/in/alexeze" target="_blank">LinkedIn</a>
+- <a href="https://twitter.com/ialexeze" target="_blank">Twitter</a>
