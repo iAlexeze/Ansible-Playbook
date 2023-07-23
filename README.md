@@ -1,4 +1,6 @@
 # Ansible Playbooks Repository
+![GitHub](https://img.shields.io/badge/-Ansible--Playbooks-orange) ![IALEX](https://img.shields.io/badge/IALEX-blue) ![IALEX](https://img.shields.io/badge/Roles-gray) ![IALEX](https://img.shields.io/badge/Starter--Kit-red) ![VSCODE](https://img.shields.io/badge/HashiCorp-violet) 
+
 Welcome to the Ansible Playbooks Repository! This repository contains a collection of Ansible playbooks and related files to automate various tasks and configurations in your infrastructure. Whether you are managing a single server or a complex environment, these playbooks can help you streamline your operations and ensure consistency across your systems.
 
 ## Directory Structure
